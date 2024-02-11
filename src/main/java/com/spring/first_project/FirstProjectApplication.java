@@ -31,11 +31,13 @@ public class FirstProjectApplication implements CommandLineRunner {
 
         Client client1 = new Client(null, "Abdallah", "a.matallah@esi-sba.dz", Civility.Homme, null);
         Client client2 = new Client(null, "Mohammed", "m.belhadj@esi-sba.dz", Civility.Homme, null);
-        Client client3 = new Client(null, "Meriem", "m.matallah@esi-sba.dz", Civility.Femme, null);
+        Client client3 = new Client(null, "Mohammed", "ma.belhadj@esi-sba.dz", Civility.Homme, null);
+        Client client4 = new Client(null, "Meriem", "m.matallah@esi-sba.dz", Civility.Femme, null);
 
         clientRepository.save(client1);
         clientRepository.save(client2);
         clientRepository.save(client3);
+        clientRepository.save(client4);
         clientRepository.findAll().forEach(System.out::println);
 
         Client c = clientRepository.findById(2L).get();
@@ -43,5 +45,10 @@ public class FirstProjectApplication implements CommandLineRunner {
         Compte compte = new Compte(null, "AA", "BB", new Date(),c);
 
         compteRepository.save(compte);
+
+
+        clientRepository.findClientsByNom("Mohammed").forEach(System.out::println);
+
+        System.out.println(clientRepository.findNameById(1L));
     }
 }

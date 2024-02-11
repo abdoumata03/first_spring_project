@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import java.util.Date;
 
@@ -19,6 +20,7 @@ public class Compte {
     private String password;
     private Date dateCreation;
 
+    @ToString.Exclude
     @ManyToOne
     @JoinColumn(name="idclient")
     private Client client;
