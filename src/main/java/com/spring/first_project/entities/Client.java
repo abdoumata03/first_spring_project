@@ -6,6 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Collection;
+
 @Entity
 @Data @AllArgsConstructor @NoArgsConstructor
 public class Client {
@@ -21,4 +23,7 @@ public class Client {
 
     @Enumerated(EnumType.STRING)
     private Civility sexe;
+
+    @OneToMany(mappedBy = "client")
+    private Collection<Compte> comptes;
 }
