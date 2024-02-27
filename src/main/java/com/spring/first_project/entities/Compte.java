@@ -16,9 +16,11 @@ public class Compte {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idCompte;
+
     private String login;
     private String password;
     private Date dateCreation;
+
 
     @ToString.Exclude
     @ManyToOne

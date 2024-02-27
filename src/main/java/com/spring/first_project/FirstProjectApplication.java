@@ -15,7 +15,6 @@ import java.util.Date;
 @SpringBootApplication
 public class FirstProjectApplication implements CommandLineRunner {
 
-
     @Autowired
     ClientRepository clientRepository;
 
@@ -38,6 +37,9 @@ public class FirstProjectApplication implements CommandLineRunner {
         clientRepository.save(client2);
         clientRepository.save(client3);
         clientRepository.save(client4);
+
+
+        System.out.println("Printing all clietns:\n");
         clientRepository.findAll().forEach(System.out::println);
 
         Client c = clientRepository.findById(2L).get();

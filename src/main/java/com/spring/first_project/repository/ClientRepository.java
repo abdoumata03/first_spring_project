@@ -14,8 +14,17 @@ public interface ClientRepository extends JpaRepository<Client, Long> {
 
     List<Client> findClientsByNom(String n);
 
-
-
     @Query("select e.nom from Client e where e.idClient=:id")
     String findNameById(@Param("id") Long id);
+
 }
+
+
+
+
+
+
+
+
+
+
